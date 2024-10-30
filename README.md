@@ -88,7 +88,7 @@
 - **输入**：较长的明文、16位的密钥和初始向量（IV）
 - **操作**：
   - 输入后点击“CBC加密”按钮。
-![image](https://github.com/user-attachments/assets/3753a44a-9410-42e1-b079-bcab29b26481)
+  - ![image](https://github.com/user-attachments/assets/3753a44a-9410-42e1-b079-bcab29b26481)
 
 #### 解密
 - **输入**：较长的密文、16位的密钥和初始向量（IV）
