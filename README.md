@@ -1,5 +1,5 @@
 # S-AES
-信息安全导论第二次小组作业，包括源代码、测试结果文档、用户指南和开发手册。
+信息安全导论第二次小组作业，包括源代码、测试结果文档、用户指南（#用户指南）和开发手册。
 
 # 用户指南
 
@@ -94,11 +94,11 @@
 - **输入**：较长的密文、16位的密钥和初始向量（IV）
 - **操作**：
   - 输入后点击“CBC解密”按钮。
-![image](https://github.com/user-attachments/assets/177f66ae-2daa-41e0-9847-be300c796d62)
+  - ![image](https://github.com/user-attachments/assets/177f66ae-2daa-41e0-9847-be300c796d62)
 
 #### 密文篡改
 - 对密文进行篡改，使用相同的密钥和IV对篡改后的密文进行解密，解密结果将产生明显差异，方便进行数据完整性验证。
-![image](https://github.com/user-attachments/assets/e2812cd3-b89a-442f-9fad-d325b6dcbe82)
+- ![image](https://github.com/user-attachments/assets/e2812cd3-b89a-442f-9fad-d325b6dcbe82)
 
 ## 四、常见问题
 
