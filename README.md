@@ -5,7 +5,9 @@
 
 ## 一、简介
 
-本用户指南介绍了一个基于简化高级加密标准（S-AES）的加密解密程序。本程序支持基础加密解密操作、多重加密模式、以及分组链模式（CBC）。用户可以通过图形界面（GUI）实现交互式加密解密功能。
+本用户指南介绍了一个基于简化高级加密标准（S-AES）的加密解密程序。本程序支持基础加密解密操作、多重加密模式、以及分组链模式（CBC）。用户可以通过图形界面（GUI）实现交互式加密解密功能，以下是界面展示：
+![image](https://github.com/user-attachments/assets/92fad99d-c5b6-421c-bf1d-579db60119eb)
+
 
 ## 二、安装指南
 
@@ -27,36 +29,58 @@
 - **输出**：16位二进制字符串的密文
 - **操作**：
   - 打开程序，在加密界面中输入16位的明文和密钥，点击“加密”按钮，即可获得对应的16位密文。
+    ![image](https://github.com/user-attachments/assets/e6b29413-d783-4386-8830-a63b097c7c52)
+    ![image](https://github.com/user-attachments/assets/c837b277-67ea-4e8b-ad01-3fd94a497904)
+
+
 
 #### 解密
 - **输入**：16位二进制字符串的密文和密钥
 - **输出**：16位二进制字符串的明文
 - **操作**：
   - 在解密界面输入16位的密文和密钥，点击“解密”按钮，将显示解密后的16位明文。
+    ![image](https://github.com/user-attachments/assets/7c96def5-5fba-4375-9892-cee8bfa9edea)
+    ![image](https://github.com/user-attachments/assets/1215af2a-2aac-4244-ae40-ed6c0df16eb3)
 
-### 四、扩展功能
+
+
+### 扩展功能
 
 #### ASCII编码支持
 - 程序支持输入ASCII编码字符串，将其分组为2字节并进行加密，输出为ASCII编码的字符串（可能为乱码）。
+  ![image](https://github.com/user-attachments/assets/e9579d86-4689-461d-91ca-230a3ecf91dc)
+
 
 #### 双重加密
 - **密钥长度**：32位
 - **操作**：
   - 用户输入32位的密钥和16位的明文。
   - 加密过程：使用密钥的前16位进行首次加密，随后使用后16位再次加密。
+![image](https://github.com/user-attachments/assets/fe65e3d2-2dd2-4bda-b6ee-4c1451713a2d)
+![image](https://github.com/user-attachments/assets/548fee88-255f-47f3-928e-019daa42c867)
   - 解密过程：反向操作，即使用后16位进行第一次解密，再使用前16位解密结果。
+  ![image](https://github.com/user-attachments/assets/b1dfaeb8-978a-4031-815c-576c7be5843e)
+![image](https://github.com/user-attachments/assets/0d451765-7a2a-4e35-9a89-514a6e059399)
+
+
 
 #### 三重加密
 - **密钥长度**：48位（16位密钥的三重组合）
 - **操作**：
   - 用户输入48位的密钥和16位明文。
   - 加密过程：依次使用每16位密钥进行三次加密。
+    ![image](https://github.com/user-attachments/assets/45171493-3b76-44de-92f6-9764c8e3b738)
+![image](https://github.com/user-attachments/assets/0d17dc45-9d16-4891-803f-c3b0eb3972ec)
+
   - 解密过程：按相反顺序逐步解密。
+![image](https://github.com/user-attachments/assets/e172bb38-04e8-425b-8fb9-a832c4a5bc47)
+![image](https://github.com/user-attachments/assets/0d607b16-a652-4fe0-a715-e55cf4fe4649)
 
 ### 安全功能
 
 #### 中间相遇攻击
 - 程序实现了中间相遇攻击，用于在已知明文和密文对的情况下，通过穷举密钥找出加密使用的密钥组合。
+![image](https://github.com/user-attachments/assets/92a67c43-8781-4b15-9d5d-7021eb10e4f3)
 
 ### 工作模式 - CBC（密码分组链模式）
 
@@ -64,21 +88,29 @@
 - **输入**：较长的明文、16位的密钥和初始向量（IV）
 - **操作**：
   - 输入后点击“CBC加密”按钮。
+![image](https://github.com/user-attachments/assets/3753a44a-9410-42e1-b079-bcab29b26481)
 
 #### 解密
 - **输入**：较长的密文、16位的密钥和初始向量（IV）
 - **操作**：
   - 输入后点击“CBC解密”按钮。
+![image](https://github.com/user-attachments/assets/177f66ae-2daa-41e0-9847-be300c796d62)
 
 #### 密文篡改
 - 对密文进行篡改，使用相同的密钥和IV对篡改后的密文进行解密，解密结果将产生明显差异，方便进行数据完整性验证。
+![image](https://github.com/user-attachments/assets/e2812cd3-b89a-442f-9fad-d325b6dcbe82)
 
-## 五、常见问题
+## 四、常见问题
 
 - **输入错误**：如果输入的明文或密钥不是16比特，程序将提示错误信息。请确保输入正确格式的数据。
-- **空输入**：如果明文为空，则无法进行加密或解密操作。请至少输入一些数据。
+  ![image](https://github.com/user-attachments/assets/eea6cffe-b2d0-41ce-a364-b761c44d881c)
+  ![image](https://github.com/user-attachments/assets/9cb0e362-5a76-4248-92d8-0d153dbdbf3d)
 
-## 六、探索更多
+
+- **空输入**：如果明文为空，则无法进行加密或解密操作。请至少输入一些数据。
+![image](https://github.com/user-attachments/assets/e73c0b87-49f7-49be-8d22-98c1035cc419)
+
+## 五、探索更多
 
 - 本指南提供了使用该程序的基础知识。您可以进一步阅读源代码以了解实现细节，或者尝试修改代码来探索不同的加密方案。
 
@@ -122,9 +154,7 @@ S-AES加密过程包括初始轮密钥添加和两轮主要操作。
 通过 g 函数和轮常量扩展初始密钥。将16位密钥分为左右两部分，每一部分各8位。记原始密钥为第0个密钥。函数g的步骤，将第i-1个密钥的右半部分（8位）执行完上述步骤后得到g(第i-1个密钥的右半部分)，将其与第i-1个密钥的左半部分（8位）进行异或得到第i个密钥的左半部分。
 第i个密钥的右半部分由第i个密钥的左半部分与第i-1个密钥的右半部分进行异或得到。
 
-## 四、算法接口说明（SAES.java）
-
-以下是主要接口的简要说明：
+## 三、算法接口说明（SAES.java）
 
 1. **`keyExpansion(String keyStr)`**：
    - 实现密钥扩展，将输入的16位二进制密钥扩展为多个轮密钥，用于后续加密和解密轮次中的密钥。
@@ -162,7 +192,7 @@ S-AES加密过程包括初始轮密钥添加和两轮主要操作。
 12. **`meetInTheMiddleAttack(String plaintext, String ciphertext)`**：
     - 中间相遇攻击实现，通过记录明文和密文的中间状态并进行比对，尝试破解双重加密的密钥。
 
-## 五、GUI接口说明（GUI.java）
+## 四、GUI接口说明（GUI.java）
 
 - 1.**`public GUI()`**
   - 功能: 初始化主窗口和选项卡面板，包含不同加密解密界面的标签。
